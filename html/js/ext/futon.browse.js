@@ -672,7 +672,7 @@
             if (row.id) {
               $("<td class='key'><a href='document.html?" + encodeURIComponent(db.name) +
                 "/" + $.couch.encodeDocId(row.id) + "'><strong></strong><br>" +
-                "<span class='docid'>ID:&nbsp;" + row.id + "</span></a></td>")
+                "<span class='docid'>ID:&nbsp;" + $("<div>").text(row.id).html() + "</span></a></td>") // Properly escape row.id
                 .find("strong").text(key).end()
                 .appendTo(tr);
             } else {
